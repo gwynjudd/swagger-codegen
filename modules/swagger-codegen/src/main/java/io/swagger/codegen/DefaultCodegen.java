@@ -3152,12 +3152,14 @@ public class DefaultCodegen {
             word = m.replaceAll(rep);
         }
 
-        // Remove all underscores
-        p = Pattern.compile("(_)(.)");
-        m = p.matcher(word);
-        while (m.find()) {
-            word = m.replaceFirst(m.group(2).toUpperCase());
+        if (false) {
+            // Remove all underscores
+            p = Pattern.compile("(_)(.)");
             m = p.matcher(word);
+            while (m.find()) {
+                word = m.replaceFirst(m.group(2).toUpperCase());
+                m = p.matcher(word);
+            }
         }
 
         if (lowercaseFirstLetter && word.length() > 0) {

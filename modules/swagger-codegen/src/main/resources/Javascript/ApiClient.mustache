@@ -504,7 +504,7 @@
       case 'Number':
         return parseFloat(data);
       case 'String':
-        return String(data);
+        return (data === null || data === undefined) ? data : String(data);
       case 'Date':
         return this.parseDate(String(data));
       case 'Blob':
