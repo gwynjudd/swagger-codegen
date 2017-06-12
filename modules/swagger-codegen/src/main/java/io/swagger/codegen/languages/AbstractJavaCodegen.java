@@ -472,13 +472,15 @@ public abstract class AbstractJavaCodegen extends DefaultCodegen implements Code
             return name;
         }
 
-        if(startsWithTwoUppercaseLetters(name)){
-            name = name.substring(0, 2).toLowerCase() + name.substring(2);
-        }
+        if (false) {
+            if (startsWithTwoUppercaseLetters(name)) {
+                name = name.substring(0, 2).toLowerCase() + name.substring(2);
+            }
 
-        // camelize (lower first character) the variable name
-        // pet_id => petId
-        name = camelize(name, true);
+            // camelize (lower first character) the variable name
+            // pet_id => petId
+            name = camelize(name, true);
+        }
 
         // for reserved word or word starting with number, append _
         if (isReservedWord(name) || name.matches("^\\d.*")) {

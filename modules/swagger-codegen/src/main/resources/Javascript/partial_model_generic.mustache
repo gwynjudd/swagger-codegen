@@ -46,7 +46,8 @@
         obj['{{baseName}}']{{{defaultValueWithParam}}}
       }
 {{/vars}}    }
-    return obj;
+
+    return obj || data;
   }
 {{#useInheritance}}{{#parentModel}}
   exports.prototype = Object.create({{classname}}.prototype);
